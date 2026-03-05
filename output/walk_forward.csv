@@ -1,0 +1,4 @@
+Asset,TF,Best Params,Train Sharpe,Test Sharpe,Train Trades,Test Trades,Train Return,Test Return
+Gold,1h / 1h  (≈2 yr),"{'swing_lookback': np.float64(20.0), 'sweep_lookback': np.float64(15.0), 'entry_validity': np.float64(10.0), 'rr': np.float64(3.0)}",-0.18,0.05,257,124,-3.6%,-1.5%
+Nasdaq,1h / 1h  (≈2 yr),"{'swing_lookback': np.float64(15.0), 'sweep_lookback': np.float64(15.0), 'entry_validity': np.float64(5.0), 'rr': np.float64(4.0)}",-2.18,-3.85,318,160,-32.3%,-20.6%
+SP500,1h / 1h  (≈2 yr),"{'swing_lookback': np.float64(15.0), 'sweep_lookback': np.float64(10.0), 'entry_validity': np.float64(3.0), 'rr': np.float64(4.0)}",-2.17,-3.98,327,152,-27.5%,-17.5%

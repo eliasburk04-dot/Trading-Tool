@@ -1,0 +1,4 @@
+Asset,TF,Symbol,Total Trades,Win Rate,Avg Win,Avg Loss,Profit Factor,Expectancy,Total Return,CAGR,Sharpe,Sortino,Max Drawdown,Calmar,Trades/Month,Avg Hold Time,Exposure %
+Gold,1h / 1h  (≈2 yr),GC=F,554,22.9%,0.0114,-0.0041,0.82,-0.00056,-28.4%,-15.4%,-0.82,-2.15,-37.1%,-0.42,23.2,0 days 12:15:29.241877256,38.9%
+Nasdaq,1h / 1h  (≈2 yr),NQ=F,647,22.1%,0.0074,-0.0041,0.51,-0.00155,-63.9%,-40.0%,-4.28,-5.87,-64.2%,-0.62,27.1,0 days 07:51:08.624420401,29.1%
+SP500,1h / 1h  (≈2 yr),ES=F,645,21.9%,0.0054,-0.0031,0.50,-0.00121,-54.4%,-32.6%,-4.45,-6.03,-54.4%,-0.60,27.0,0 days 07:54:16.744186046,29.2%
