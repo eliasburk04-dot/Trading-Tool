@@ -1,0 +1,121 @@
+research:
+  last_years: 3
+  interval: 1d
+  timeframes: [D1, H1]
+  seed: 42
+  report_dir: reports
+
+data:
+  provider: yahoo
+  cache_dir: data/cache
+  instruments:
+    Gold:
+      primary: GC=F
+      alternates: [GLD]
+    Nasdaq:
+      primary: ^IXIC
+      alternates: [QQQ]
+    SP500:
+      primary: ^GSPC
+      alternates: [SPY]
+
+sessions:
+  default:
+    timezone: America/New_York
+    session_open: "09:30"
+    session_close: "16:00"
+    trade_start: "09:45"
+    trade_end: "15:30"
+    flatten_time: "15:55"
+    allow_overnight: false
+
+risk:
+  initial_capital: 100000
+  position_fraction: 0.20
+  max_exposure: 0.20
+  max_notional: 25000
+  transaction_cost_bps: 2.0
+  slippage_bps: 1.0
+  spread_bps: 1.0
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  trailing_stop_pct: 0.01
+  max_drawdown_circuit_breaker: 0.20
+  max_concurrent_trades: 1
+  cooldown_bars_after_loss: 3
+  max_trades_per_day: 4
+  daily_loss_limit_pct: 0.02
+  max_consecutive_losses_per_day: 2
+  flatten_end_of_day: true
+  allow_overnight: false
+  time_stop_bars: 8
+
+walk_forward:
+  train_months: 12
+  test_months: 3
+  step_months: 3
+  purge_bars: 2
+  embargo_bars: 2
+
+optimization:
+  parameter_budget_per_strategy: 8
+  min_samples_before_stop: 8
+  bootstrap_samples: 100
+  slippage_jitter_bps: 2.0
+
+guardrails:
+  min_trade_count: 8
+  max_drawdown: 0.25
+  min_out_of_sample_score: 0.10
+  min_oos_is_ratio: 0.50
+  baseline_margin: 0.0
+  frequency:
+    D1:
+      min_total_trades: 150
+      min_trades_per_day: 0.15
+      min_oos_trades_per_split: 30
+    H1:
+      min_total_trades: 300
+      min_trades_per_day: 0.50
+      min_oos_trades_per_split: 30
+    M15:
+      min_total_trades: 600
+      min_trades_per_day: 1.0
+      min_oos_trades_per_split: 30
+    M5:
+      min_total_trades: 600
+      min_trades_per_day: 1.0
+      min_oos_trades_per_split: 30
+
+scoring:
+  weights:
+    out_of_sample: 0.30
+    profit_factor: 0.12
+    expectancy: 0.12
+    drawdown: 0.12
+    stability: 0.10
+    frequency: 0.10
+    baseline_margin: 0.08
+    parameter_robustness: 0.04
+    complexity_penalty: 0.02
+
+strategies:
+  enabled:
+    - ma_crossover
+    - donchian_breakout
+    - atr_trend_filter
+    - rsi_reversion
+    - bollinger_reversion
+    - roc_momentum
+    - atr_band_breakout
+    - vwap_mean_reversion
+    - opening_range_breakout
+    - trend_pullback
+    - squeeze_release
+    - intraday_rsi_reversion
+
+paper:
+  replay_days: 60
+
+features:
+  enable_live_trading: false
